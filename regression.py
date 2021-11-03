@@ -1,6 +1,8 @@
 import pandas as pd
-import quandl
-import math 
+import quandl, math
+import numpy as np
+from sklearn import preprocessing, model_selection, svm
+from sklearn.linear_model import LinearRegression
 
 # Get google daily stock data
 df = quandl.get('WIKI/GOOGL')
@@ -27,3 +29,5 @@ forecast_out = int(math.ceil(0.01*len(df)))
 df['label'] = df[forecast_col].shift(-forecast_out)
 df.dropna(inplace=True)
 print(df.tail())
+
+X = np.array(df.drop(['label']))
