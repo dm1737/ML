@@ -1,7 +1,9 @@
-import pandas as pd
-import quandl, math
+import math
+
 import numpy as np
-from sklearn import preprocessing, model_selection, svm
+import pandas as pd
+import quandl
+from sklearn import model_selection, preprocessing, svm
 from sklearn.linear_model import LinearRegression
 
 # Get google daily stock data
